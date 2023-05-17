@@ -12,7 +12,11 @@ import android.widget.SeekBar;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-
+    private TextToSpeech mTTS;
+    private EditText mEditText;
+    private SeekBar mSeekBarPitch;
+    private SeekBar mSeekBarSpeed;
+    private Button mButtonSpeak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
