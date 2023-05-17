@@ -42,7 +42,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        mEditText = findViewById(R.id.edit_text);
+        mSeekBarPitch = findViewById(R.id.seek_bar_pitch);
+        mSeekBarSpeed = findViewById(R.id.seek_bar_speed);
 
+        mButtonSpeak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speak();
+            }
+        });
     }
 
 
