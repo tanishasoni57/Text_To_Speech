@@ -53,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void speak() {
+        String text = mEditText.getText().toString();
+        float pitch = (float) mSeekBarPitch.getProgress() / 50;
+        if (pitch < 0.1) pitch = 0.1f;
+        float speed = (float) mSeekBarSpeed.getProgress() / 50;
+        if (speed < 0.1) speed = 0.1f;
 
+        mTTS.setPitch(pitch);
+        mTTS.setSpeechRate(speed);
+
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null, "myUtteranceId");
+
+    }
 
 }
