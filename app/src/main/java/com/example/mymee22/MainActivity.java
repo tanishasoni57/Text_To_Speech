@@ -66,5 +66,14 @@ public class MainActivity extends AppCompatActivity {
         mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null, "myUtteranceId");
 
     }
+    @Override
+    protected void onDestroy() {
+        if (mTTS != null) {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
+
+        super.onDestroy();
+    }
 
 }
